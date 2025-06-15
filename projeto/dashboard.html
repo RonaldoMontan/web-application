@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Bem-vindo!</title>
+    <link rel ="stylesheet" href="assets/style.css">
+    <script src="assets/script.js"></script>
+</head>
+<body>
+    <!-- Elementos de fundo animados -->
+    <div class="stars" id="stars"></div>
+    <div class="floating-elements">
+        <div class="floating-circle" style="width: 100px; height: 100px; top: 10%; left: 10%; animation-delay: 0s;"></div>
+        <div class="floating-circle" style="width: 60px; height: 60px; top: 60%; right: 15%; animation-delay: 2s;"></div>
+        <div class="floating-circle" style="width: 80px; height: 80px; bottom: 20%; left: 20%; animation-delay: 4s;"></div>
+    </div>
+
+    <button class="logout-btn" onclick="logout()">🚪 Sair</button>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="welcome-text" id="welcomeText">Bem-vindo, Dev! 🚀</h1>
+            <p class="subtitle">Seu dashboard pessoal está pronto para impressionar</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Card de Estatísticas -->
+            <div class="card" onclick="showStats()">
+                <div class="card-header">
+                    <div class="card-icon">📊</div>
+                    <div class="card-title">Estatísticas</div>
+                </div>
+                <div class="card-content">
+                    <div class="stats-number" id="visitorCount">0</div>
+                    <p>Visitantes hoje</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="--progress-width: 75%; width: 75%;"></div>
+                    </div>
+                    <p>Meta: 100 visitantes</p>
+                </div>
+            </div>
+
+            <!-- Card do Tempo -->
+            <div class="card" onclick="showWeather()">
+                <div class="card-header">
+                    <div class="card-icon">🌤️</div>
+                    <div class="card-title">Clima</div>
+                </div>
+                <div class="card-content weather-widget">
+                    <div class="temperature">24°C</div>
+                    <p>Campinas, SP</p>
+                    <p>Parcialmente nublado</p>
+                </div>
+            </div>
+
+            <!-- Card de Tempo Real -->
+            <div class="card" onclick="showTime()">
+                <div class="card-header">
+                    <div class="card-icon">⏰</div>
+                    <div class="card-title">Hora Atual</div>
+                </div>
+                <div class="card-content time-widget">
+                    <div class="current-time" id="currentTime">00:00:00</div>
+                    <p id="currentDate">Carregando...</p>
+                </div>
+            </div>
+
+            <!-- Card Interativo -->
+            <div class="card" onclick="showSurprise()">
+                <div class="card-header">
+                    <div class="card-icon">✨</div>
+                    <div class="card-title">Surpresa!</div>
+                </div>
+                <div class="card-content">
+                    <p>Clique aqui para uma experiência interativa!</p>
+                    <button class="interactive-btn" onclick="event.stopPropagation(); launchFireworks()">
+                        🎆 Fogos de Artifício
+                    </button>
+                    <button class="interactive-btn" onclick="event.stopPropagation(); changeTheme()">
+                        🎨 Mudar Tema
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card de Conquistas -->
+            <div class="card" onclick="showAchievements()">
+                <div class="card-header">
+                    <div class="card-icon">🏆</div>
+                    <div class="card-title">Conquistas</div>
+                </div>
+                <div class="card-content">
+                    <p>🎯 Primeiro Login - Concluído!</p>
+                    <p>💻 Desenvolvedor Iniciante - Concluído!</p>
+                    <p>🚀 Explorador Web - Em progresso...</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="--progress-width: 60%; width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card de Dados do Sistema -->
+            <div class="card" onclick="showSystemInfo()">
+                <div class="card-header">
+                    <div class="card-icon">💾</div>
+                    <div class="card-title">Sistema</div>
+                </div>
+                <div class="card-content">
+                    <p>Status: <span style="color: #4ade80;">✅ Online</span></p>
+                    <p>Uptime: <span id="uptime">0h 0m</span></p>
+                    <p>Conexões ativas: <span style="color: #60a5fa;">42</span></p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="--progress-width: 85%; width: 85%;"></div>
+                    </div>
+                    <p>Performance: Excelente</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
